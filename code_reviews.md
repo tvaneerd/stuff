@@ -10,7 +10,8 @@ The worst place to catch bugs is in production.  The best is before the code is 
 Some of this seems to contradict "agile".  It need not.
 Taking time to design something doesn't mean you need to design it beginning to end.
 But at least get an idea of where you might be headed.
-_Quickly iterating_ these stages, doesn't mean _skip_ them.
+
+_Quickly iterating_ doesn't mean _skipping_.
 
 ```
 $                                                                                                                                $$$$$$
@@ -23,23 +24,25 @@ Design 2 - code design
 Tests* - could/should be between Design and Writing, and should be Unit and System  
 Review* - can happen at multiple stages!
 
-Feature Design
+### Feature Design
 
 Don't focus on features.  Focus on problems that need to be solved.
 I've seen feature requests from users like "please add a short-cut key for Save-As, preferably one that auto-names with an incrementing number".
 Obviously what they really want is a version control system.  Or a way to experiment within the app, maybe show multiple scenarios at once, compare them, etc.
-What is the real problem behind the request?
 
-Don't be afraid to have a vision.  A vision can be quick, doesn't need to be designed in detail. (But does need enough thought to have an idea of feasibility.)
-A vision can be "The real user problem is they are constantly tranfering data between apps - let's make that seamless."
-How is it going to be seamless. Well, in the end maybe it won't.  Maybe it it will just be less seams. Cut and paste? Import/export/ Plugins?
+Always think _What is the real problem behind the request?_
+
+Don't be afraid to have a vision.  A vision can be quick, doesn't need to be designed in detail. (But does need enough thought to have some likelihood of feasibility.)
+An example vision might be "The real user problem is they are constantly tranfering data between apps - let's make that seamless."
+How is it going to be seamless. Well, in the end maybe it won't.  Maybe it it will just be less seams. Cut and paste? Import/export/ Plugins? Have an ideal, that may not be reached, but gives a direction to head.
 
 An idea of direction helps.  You really don't want detail.  Because detail will be wrong.
 But high level direction leaves lots of room for experimentation and agile.
 
+> “A goal is not always meant to be reached, it often serves simply as something to aim at.” - Bruce Lee
 
 
-_Pre-code_ reviews
+### _Pre-code_ reviews
 
 I am amazed how often I hear "You probably should have written this like X instead of like Y". :-(
 Once, at Adobe, a developer spent about a month implementing an important and complicated feature.
@@ -95,7 +98,7 @@ Also, you have a better chance of someone saying "Yes!" (because they've also wa
 and someone saying "Keep an eye on GeometryConfig" (because they've looked into this before) and saving you time. "Oh, I hadn't thought about that - Let's talk after standup". TADA!
 
 
-Catching errors at "Writing time"
+### Catching errors at "Writing time"
 
 This is done via guidelines and best practices.  No, not styles guides.  I really don't care where the brackets go.
 I do care about having constructors that match assignment.  About avoiding raw pointers. (And "a shared pointer is as good as a global variable" - Sean Parent. So that leaves, typically, unique_ptr.)
@@ -103,7 +106,21 @@ I do care about having constructors that match assignment.  About avoiding raw p
 With some guidelines and best practices, you can avoid problems before you write them.
 (You can also write some checkers to catch it slightly after it is written.)
 
-Catching errors at compile time
+### Catching errors at compile time
+
+Everyone's favourite time to catch bugs.
+
+Good APIs are easy to use correctly, and hard to use incorrectly. Good classes and functions cause you to "fall into the pit of success".
+
+### Catching errors in Tests
+
+Yeah, do that.  Test early - it helps give clarity to your code.  It helps keep your code small and independent.
 
 
+### Code Review
 
+Finally, we get to the topic at hand.
+
+Why was all that other stuff mentioned first?  Because most of that stuff shouldn't happen during a code review - it has, hopefully, already been done.
+
+I dev rightly feels defeated if told to do major rewriting on something they just wrote. So architectural issues were hopefully caught before the code review.
