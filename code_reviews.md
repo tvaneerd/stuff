@@ -44,14 +44,14 @@ But high level direction leaves lots of room for experimentation and agile.
 
 ### _Pre-code_ reviews
 
-I am amazed how often I hear "You probably should have written this like X instead of like Y". :-(
+I am amazed how often I hear "You probably should have written this like X instead of like Y". :-(  
 Once, at Adobe, a developer spent about a month implementing an important and complicated feature.
 We decided to do a code review - we hadn't (yet) instituted a process for code reviews, we were still feeling our way around.
 The lead architect noted (correctly) that the feature really needed to be threaded,
 otherwise the main thread could (in some reasonable situations) stall badly.
-(This was many years ago, when threading was still fairly new.)
+(This was many years ago, when threading was less common.)
 The conclusion of the code review was, yes, lots of rewrite was necessary, as it needed to be threaded - even at the cost of missing a ship date.
-(As you can imagine, adding threads after-the-fact isn't always straightforward, particularly with code mixing processing with UI feedback.)
+(As you can imagine, adding threads after-the-fact isn't always straightforward, particularly with code that mixed processing with UI feedback.)
 
 So what was the lesson to be learned?
 
@@ -112,6 +112,8 @@ Everyone's favourite time to catch bugs.
 
 Good APIs are easy to use correctly, and hard to use incorrectly. Good classes and functions cause you to "fall into the pit of success".
 
+And "API" means every class and function that you write.
+
 ### Catching errors in Tests
 
 Yeah, do that.  Test early - it helps give clarity to your code.  It helps keep your code small and independent.
@@ -121,6 +123,12 @@ Yeah, do that.  Test early - it helps give clarity to your code.  It helps keep 
 
 Finally, we get to the topic at hand.
 
-Why was all that other stuff mentioned first?  Because most of that stuff shouldn't happen during a code review - it has, hopefully, already been done.
+Why was all that other stuff mentioned first?  Because most of that stuff shouldn't happen during a code review - it has, hopefully, already been done.  And the earlier it was in this doc, the more likely it should have been done already.
 
 I dev rightly feels defeated if told to do major rewriting on something they just wrote. So architectural issues were hopefully caught before the code review.
+
+Some guidelines and best practices can be caught - and taught - during code review. (And discovered.  Either by seeing a good technique, or by seeing a mistake and figuring out ways to avoid it in the future.)
+
+API improvements are often found during code reviews.  Everything is obvious when you write it.  You need someone else to read it to really know whether it is clear or not.
+
+
