@@ -21,6 +21,8 @@ However, scientists have modeled the "average" person's wavelength response curv
 
 ![cone response](https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Cone-fundamentals-with-srgb-spectrum.svg/810px-Cone-fundamentals-with-srgb-spectrum.svg.png "Cone Response")
 
+(Unfortunately, like way too much science, the "average person" was very biased towards white males; in fact, the original model was built with data from only 17 people, representing everyone!)
+
 The curves are denoted as S,M,L for Short, Medium and Long wavelengths (scientists can be boring).
 They roughly - very roughly - align with and peak near the colours red, green, and blue.
 (Very roughly! The long wavelength curve ("red") actually peaks around greenish-yellow, for example.)
